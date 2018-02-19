@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.name        = "form_object"
   s.version     = FormObject::VERSION
   s.authors     = ["TomBosmans"]
-  s.email       = ["t.bosse@hotmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of FormObject."
-  s.description = "TODO: Description of FormObject."
+  s.email       = ["tom.94.bosmans@gmail.com"]
+  s.homepage    = "https://github.com/TomBosmans/form_object"
+  s.summary     = "Form objects for rails"
+  s.description = "This is my attempt for form objects in rails."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
