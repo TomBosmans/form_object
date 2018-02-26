@@ -1,4 +1,4 @@
-require "form_object/engine"
+require 'form_object/engine'
 
 module FormObject
   # Your code goes here...
