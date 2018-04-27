@@ -4,7 +4,6 @@ class FormObject::Field
   def initialize(name, resource:, type: nil)
     @name = name
     @resource = resource
-    binding.pry
     @type = type || find_type
   end
 
