@@ -9,6 +9,18 @@ module FormObject::BaseExtension
     @resources ||= []
   end
 
+  def default_resource=(value)
+    @default_resource = value.to_s.underscore
+  end
+
+  def default_resource
+    @default_resource ||= generate_default_resource
+  end
+
+  def generate_default_resource
+    name.chomp('Form').underscore
+  end
+
   def resource(resource)
     @current_resource = resource.to_s.underscore
     resources << @current_resource
@@ -16,10 +28,11 @@ module FormObject::BaseExtension
     create_resource_setter(@current_resource)
     yield if block_given?
     create_attributes_method(@current_resource)
+    @current_resource = nil
   end
 
   def field(name, options = {})
-    options[:resource] = @current_resource
+    options[:resource] = @current_resource || default_resource
     field = FormObject::Field.new(name, options)
     fields << field
     create_attr_accessor(field.full_name)
