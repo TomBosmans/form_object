@@ -5,7 +5,6 @@ class FormObject::Base
   include ActiveModel::Model
 
   attr_accessor :fields, :resources
-  attr_accessor :test1, :test2
 
   def initialize(params = {})
     self.fields = self.class.fields
