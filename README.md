@@ -6,6 +6,9 @@ This gem is an extraction from my Magnus project. It is an experiment on how to 
 ### Example FormObject
 ```ruby
 class BookForm < FormObject::Base
+  # self.default_resource = :author # fields not in a block will be added to :author
+  field :description # this will be added to :book resource.
+
   resource :book do
     field :title
   end
@@ -73,7 +76,7 @@ end
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'form_object'
+gem 'form_object', git: 'https://github.com/TomBosmans/form_object'
 ```
 
 And then execute:
