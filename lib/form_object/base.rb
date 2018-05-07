@@ -7,7 +7,7 @@ class FormObject::Base
   attr_accessor :fields, :resources
   attr_accessor :test1, :test2
 
-  def initialize(params={})
+  def initialize(params = {})
     self.fields = self.class.fields
     self.resources = self.class.resources
     super(params)
