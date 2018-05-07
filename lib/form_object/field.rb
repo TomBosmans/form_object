@@ -1,10 +1,11 @@
 class FormObject::Field
-  attr_accessor :name, :resource, :type
+  attr_accessor :name, :resource, :type, :options
 
-  def initialize(name, resource:, type: nil)
-    @name = name
-    @resource = resource
-    @type = type || find_type
+  def initialize(name, options = {})
+    self.name = name
+    self.resource = options[:resource]
+    self.type = options[:type] || find_type
+    self.options = options.with_indifferent_access
   end
 
   def full_name

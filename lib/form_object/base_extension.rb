@@ -18,8 +18,9 @@ module FormObject::BaseExtension
     create_attributes_method(@current_resource)
   end
 
-  def field(name, type: nil)
-    field = FormObject::Field.new(name, resource: @current_resource, type: type)
+  def field(name, options = {})
+    options[:resource] = @current_resource
+    field = FormObject::Field.new(name, options)
     fields << field
     create_attr_accessor(field.full_name)
     field
