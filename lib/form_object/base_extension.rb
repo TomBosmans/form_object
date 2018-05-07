@@ -18,7 +18,9 @@ module FormObject::BaseExtension
   end
 
   def generate_default_resource
-    name.chomp('Form').underscore
+    generated_name = name.chomp('Form').underscore
+    resource(generated_name)
+    generated_name
   end
 
   def resource(resource)
