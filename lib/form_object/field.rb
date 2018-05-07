@@ -24,6 +24,6 @@ class FormObject::Field
   end
 
   def find_type
-    db_column_info ? db_column_info.type : 'string'
+    db_column_info ? db_column_info.type.to_sym : :string
   end
 end
