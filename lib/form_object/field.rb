@@ -12,6 +12,11 @@ class FormObject::Field
     "#{resource}_#{name}"
   end
 
+  def label
+    return options[:label] if options[:label]
+    model_class.human_attribute_name(name)
+  end
+
   private
 
   def model_class
